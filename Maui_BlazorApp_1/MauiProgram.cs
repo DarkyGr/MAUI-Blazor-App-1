@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Maui_BlazorApp_1.Data;
+using Maui_BlazorApp_1.Services;
 
 namespace Maui_BlazorApp_1;
 
@@ -21,6 +22,9 @@ public static class MauiProgram
 		builder.Services.AddBlazorWebViewDeveloperTools();
 		builder.Logging.AddDebug();
 #endif
+		
+		// Adding injects
+		builder.Services.AddSingleton<IRickAndMorty, RickAndMortyService>();
 
 		builder.Services.AddSingleton<WeatherForecastService>();
 
